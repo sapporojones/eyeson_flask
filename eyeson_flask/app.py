@@ -50,12 +50,15 @@ def search():
 
     obj_list = core.create_objects(num_kills)
     filled_vic_list = []
-    with ThreadPoolExecutor(max_workers=5) as executor:
-        future_result = executor.map(
-            core.fill_in_object, obj_list, kill_list, hash_list
-        )
-        for future in future_result:
-            filled_vic_list.append(future)
+    try:
+        with ThreadPoolExecutor(max_workers=5) as executor:
+            future_result = executor.map(
+                core.fill_in_object, obj_list, kill_list, hash_list
+            )
+            for future in future_result:
+                filled_vic_list.append(future)
+    except Exception as e:
+        return render_template("500.html", error=str(e))
 
     num_gates = core.num_stargates(sys_id)
 

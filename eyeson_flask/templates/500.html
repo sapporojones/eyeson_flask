@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Something went wrong!</h1>
+    <h4>The likely causes are:</h4>
+    <ul>
+        <li>ESI errored out due to load or general unreliability</li>
+        <li>zKillboard decided not to work nicely for some reason</li>
+        <li>You searched for a nonexistant system or some other random combination of characters that isn't a system.</li>
+    </ul>
+    <h4>What do I do now?</h4>
+    <p>Wait a few seconds and then go back and try your search again.</p>
+    <br>
+    <p>We apologize for any inconvenience this causes and appreciate your patience.</p>
+<br>
+<p>For your records the error returned was:</p>
+<p>{{error}}</p>
+
+{% endblock %}
