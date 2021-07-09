@@ -16,6 +16,7 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    target_branch: "dev"
     allow:
       - dependency-type: "all"
     commit-message:
