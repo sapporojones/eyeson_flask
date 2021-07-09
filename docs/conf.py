@@ -9,6 +9,8 @@
 
 import os
 import sys
+sys.path.append(os.path.abspath('../..'))
+sys.path.append(os.path.abspath('..'))
 import inspect
 import shutil
 
@@ -37,7 +39,7 @@ except ImportError:
     from sphinx import apidoc
 
 output_dir = os.path.join(__location__, "api")
-module_dir = os.path.join(__location__, "../src/eyeson_flask")
+module_dir = os.path.join(__location__, "../eyeson_flask")
 try:
     shutil.rmtree(output_dir)
 except FileNotFoundError:
