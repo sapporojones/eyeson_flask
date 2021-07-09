@@ -165,9 +165,9 @@ def fill_in_object(vic, kill_id, kill_hash):
         vicalice_obj = requests.get(
             f"https://esi.evetech.net/latest/alliances/{vicalice_id}/?datasource=tranquility"
         )
-    vicalice_json = vicalice_obj.json()
-    vic.alice = vicalice_json["name"]
-    vic.aliceticker = vicalice_json["ticker"]
+        vicalice_json = vicalice_obj.json()
+        vic.alice = vicalice_json["name"]
+        vic.aliceticker = vicalice_json["ticker"]
 
     ids_url = f"https://esi.evetech.net/latest/universe/types/{vicship_id}/?datasource=tranquility&language=en"
     ids_req = requests.get(ids_url)
