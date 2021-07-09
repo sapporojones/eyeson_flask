@@ -12,7 +12,6 @@ updates:
       - dependency-type: "all"
     commit-message:
       prefix: ":arrow_up:"
-    target_branch: "dev"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
