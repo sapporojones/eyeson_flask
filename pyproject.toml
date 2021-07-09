@@ -6,3 +6,23 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools_scm]
 # See configuration details in https://github.com/pypa/setuptools_scm
 version_scheme = "no-guess-dev"
+
+[tool.poetry]
+name = "eyeson_flask"
+version = "0.0.1"
+description = "A local webapp to get at-a-glance information about a system.  Uses EsiPy and Flask."
+authors = ["sapporojones <sapporojones@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Flask = "^2.0.1"
+EsiPy = "^1.2.2"
+requests = "^2.25.1"
+Flask-WTF = "^0.15.1"
+
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
+tox = "^3.23.1"
+setuptools-scm = "^6.0.1"
+Sphinx = "^4.0.3"

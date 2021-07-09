@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{{ form.hidden_tag() }}
+{% block content %}
+
+
+<h1>System stats for {{closest_match}}:</h1>
+
+<h4>5 most recent losses for {{closest_match}}</h4>
+<table class="table">
+    <thread>
+        <th scope="col">Time of Kill:</th>
+        <th scope="col">Victim Ship:</th>
+        <th scope="col">Victim Name:</th>
+        <th scope="col">Victim Corp:</th>
+        <th scope="col">Victim Alliance:</th>
+    </thread>
+    <tbody>
+
+        {% for v in filled_vic_list %}
+        <tr>
+            <td>{{v.killdate}}</td>
+            <td>{{v.ship}}</td>
+            <td>{{v.name}}</td>
+            <td>{{v.corpticker}}</td>
+            <td>{{v.aliceticker}}</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+
+</table>
+<br>
+<h4>Overview:</h4>
+<table class="table">
+    <thread>
+        <th scope="col">Metric:</th>
+        <th scope="col">Quantity:</th>
+    </thread>
+    <tbody>
+        <tr>
+            <td>Recent Player Kills:</td>
+            <td>{{interactions[2]}}</td>
+        </tr>
+        <tr>
+            <td>Recent Capsule Kills:</td>
+            <td>{{interactions[1]}}</td>
+        </tr>
+        <tr>
+            <td>Recent NPC Kills:</td>
+            <td>{{interactions[0]}}</td>
+        </tr>
+        <tr>
+            <td>Number of recent jumps:</td>
+            <td>{{num_jumps}}</td>
+        </tr>
+        <tr>
+            <td>Number of Stargates in system:</td>
+            <td>{{num_gates}}</td>
+        </tr>
+
+    </tbody>
+
+</table>
+
+{% endblock %}
