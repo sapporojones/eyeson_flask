@@ -17,7 +17,7 @@ authors = ["sapporojones <sapporojones@gmail.com>"]
 python = "^3.8"
 Flask = "^2.0.1"
 EsiPy = "^1.2.2"
-requests = "^2.25.1"
+requests = "^2.26.0"
 Flask-WTF = "^0.15.1"
 
 
