@@ -39,13 +39,11 @@ def name2id(sys_name):
     :param sys_name: String value name of the system such as "Jita" or "D-PNP9"
     :return: system_id: the ID value of the provided system name.
     """
-    search_url = (
-        f"https://esi.evetech.net/latest/search/?categories=solar_system&datasource=tranquility&language=en"
-        f"&search={sys_name} "
-    )
-    search_object = requests.get(search_url)
-    search_json = search_object.json()
-    system_id = search_json["solar_system"][0]
+    url = "https://esi.evetech.net/dev/universe/ids/?datasource=tranquility&language=en"
+    payload = [sys_name]
+    req = requests.post(url, json=payload)
+    req_json = req.json()
+    system_id = req_json['systems'][0]['id']
     return system_id
 
 
